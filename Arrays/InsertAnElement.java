@@ -7,31 +7,47 @@ import java.lang.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        // YOUR CODE GOES HERE
-        // Please take input and print output to standard input/output (stdin/stdout)
-        // DO NOT USE ARGUMENTS FOR INPUTS
-        // E.g. 'Scanner' for input & 'System.out' for output
-        Scanner sc = new Scanner(System.in);
-        int N,position,Y;
-        N = sc.nextInt();
-        int a[] = new int[N+1];
-        for(int i =0;i<N;i++)
-        {
-            a[i] = sc.nextInt();
-        }
-        position = sc.nextInt();
-        Y = sc.nextInt();
-        for(int i = N-1;i>=position-1;i--)
-        {
-            a[i+1]=a[i];
-        }
-        a[position-1]=Y;
-        for(int i =0;i<N;i++)
-        {
-            System.out.print(a[i]+" ");
-        }
+public static void main(String[] args) 
+{
+// YOUR CODE GOES HERE
+// Please take input and print output to standard input/output (stdin/stdout)
+// DO NOT USE ARGUMENTS FOR INPUTS
+// E.g. 'Scanner' for input & 'System.out' for output
 
-        System.out.print(a[N]+" ");
+       Scanner sc = new Scanner(System.in);
+       int N= sc.nextInt();
+       int arraynum[] = new int[N];
+       for(int i=0;i<N;i++)
+       {
+
+             arraynum[i]=sc.nextInt();
+       }
+       int posX= sc.nextInt();
+       int elementNewY=sc.nextInt();
+       int array2[] = new int[N+1];
+       for(int i=0;i<N+1;i++)
+       {
+
+            if(i<posX-1)
+            {
+               array2[i]=arraynum[i];
+            }
+           else if(i==posX-1)
+           {
+             array2[i] = elementNewY;
+           }             
+           else
+           {
+              array2[i]=arraynum[i-1];
+           }
+
+      }
+      for(int i=0;i<N+1;i++){
+        System.out.print(array2[i]+" ");
+      }
+
+
+
     }
 }
+
